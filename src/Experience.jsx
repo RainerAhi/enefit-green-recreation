@@ -1,4 +1,4 @@
-import { Suspense, useRef, useState, useLayoutEffect } from 'react'
+import { Suspense, useRef, useState, useLayoutEffect, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Center, AccumulativeShadows, RandomizedLight, OrbitControls, Environment, Lightformer, MeshReflectorMaterial, Sparkles, Float, MeshPortalMaterial, useTexture, useHelper, Stage, SoftShadows, Effects } from '@react-three/drei'
 import { easing } from 'maath'
@@ -8,6 +8,7 @@ import { useThree } from "@react-three/fiber";
 import * as THREE from "three"
 import CustomEffects from './Effects'
 import HouseModel from './House'
+import { Loading } from './Loading'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Experience() {
@@ -15,6 +16,27 @@ export default function Experience() {
   const { camera, scene } = useThree()
 
   const controlsRef = useRef()
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 767);
+    };
+
+    // Add event listener to listen for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Initial check for mobile device on component mount
+    handleResize();
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  console.log(isMobile)
 
   const tl = gsap.timeline()
 
@@ -24,9 +46,9 @@ export default function Experience() {
 
     tl
     .to(camera.position, {
-      x: -10,
-      y: 1.5,
-      z: 2,
+      x: isMobile ? -8 : -10,
+      y: isMobile ? 1 : 1.5,
+      z: isMobile ? 1.75 : 2,
       scrollTrigger: {
         trigger: ".second-section",
         start: "top bottom",
@@ -50,9 +72,9 @@ export default function Experience() {
     })
 
     .to(scene.position, {
-      x: 0,
-      y: 1.75,
-      z: 0,
+      x: isMobile ? 0 : 0,
+      y: isMobile ? 1.75 : 1.75,
+      z:  isMobile ? 0 : 0,
       scrollTrigger: {
         trigger: ".second-section",
         start: "top bottom",
@@ -66,9 +88,9 @@ export default function Experience() {
 
 
     .to(controlsRef.current.target, {
-      x: 0,
-      y: 0,
-      z: 2,
+      x: isMobile ? 0 : 0,
+      y: isMobile ? 0 : 0,
+      z: isMobile ? 2 : 2,
       scrollTrigger: {
         trigger: ".second-section",
         start: "top bottom",
@@ -138,23 +160,11 @@ export default function Experience() {
   return (
     <>
       <SoftShadows intensity={ 20 } />
-      {/* <Sparkles 
-        count={ 100 }
-        color={ "white" }
-        scale={ 20 }
-        size={ 4 }
-      /> */}
-        <HouseModel position={ [ 0, -3.25, 0 ] }  scale={ 0.5 } />
+      <Suspense fallback={ <Loading /> } >  
+        <HouseModel position={ [ 0,  -3.25, 0 ] }  scale={ 0.5 } />
+      </Suspense>
       <OrbitControls ref={controlsRef} minPolarAngle={Math.PI / -2} maxPolarAngle={Math.PI / 1} enableZoom={ false } enableRotate={ true } />
       <Environment preset='sunset' />
       </>
   )
-}
-
-function CameraRig({ children }) {
-  const group = useRef()
-  useFrame((state, delta) => {
-    easing.dampE(group.current.rotation, [0, -state.pointer.x / 10, 0], 0.5, delta)
-  })
-  return <group ref={group}>{children}</group>
 }
