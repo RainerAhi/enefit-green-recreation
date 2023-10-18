@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
+@import url('https://fonts.cdnfonts.com/css/lakesight-personal-use-only');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Solway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Solway:wght@700&display=swap');
+@import url("https://db.onlinewebfonts.com/c/14679a7a97d388dac3a0380375ca4afe?family=Neometric+Alt+Heavy");
+@import url("https://db.onlinewebfonts.com/c/21553b99c039b140f424afd283a33017?family=Mark+Web+W04+Ultra");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+@font-face {
+  font-family: 'Lakesight';
+  src: url('./Lakesight.woff2') format('woff2'),
+      url('./Lakesight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  background: transparent;
+  background-attachment: fixed;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* TRACK */
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+/* HANDLE */
+::-webkit-scrollbar-thumb {
+  background-color: #9FE870;
+  height: 5%;
+}
+
+.main--container {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.experience {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+
+section {
+  height: 100vh;
+  pointer-events: all;
+}
+
+.first--main {
+  height: 500px;
+  width: 100%;
+}
+
+.first--div {
+  position: absolute;
+  margin-top: 1%;
+  width: 100%;
+}
+
+.nav--bar {
+  background: #9FE870;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav--bar h1 {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 800;
+  color: white;
+}
+
+.roheline--tulevik {
+  font-family: 'Oswald', sans-serif;
+  color: #163300;
+  font-size: 8rem;
+  margin-top: 5%;
+  width: 90%;
+  margin-left: 7.5%;
+  line-height: 7rem;
+  text-align: center;
+}
+
+.button--test {
+  z-index: 20;
+  pointer-events: all;
+  position: absolute;
+}
+
+.second--main {
+  height: 500px;
+  width: 100%;
+}
+
+.second--div {
+  background: #163300;
+  width: 40%;
+  height: 750px;
+  border-radius: 75px;
+  margin-right: 5%;
+  margin-left: 55%;
+  margin-top: 5%;
+  z-index: -2;
+}
+
+.second--div h1 {
+  font-family: 'Oswald', sans-serif;
+  color: #9FE870;
+  font-size: 6rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.second--div p {
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: left;
+}
+
+.image--container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.third-section {
+  z-index: 5;
+}
+
+.third--main {
+  height: 100%;
+  width: 100%;
+}
+
+
+.third--div {
+  background: #163300;
+  width: 90%;
+  height: 85%;
+  border-radius: 75px;
+  margin-left: 5%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.third--div h1 {
+  font-family: 'Oswald', sans-serif;
+  color: #9FE870;
+  text-align: center;
+  font-size: 7.5rem;
+  line-height: 8.5rem;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 0%;
+  margin-bottom: 0;
+  margin-top: -0%;
+}
+
+.third--div p {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 1.75rem;
+  line-height: 2rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2.5%;
+
+}
+
+.third--div button {
+  font-family: 'Inter', sans-serif;
+  color: #163300;
+  background-color: #9FE870;
+  font-size: 1rem;
+  line-height: 2rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2.5%;
+  border: solid transparent;
+  border-radius: 50px;
+  width: 200px;
+}
+
+.forth--main {
+  height: 100vh;
+  width: 100%;
+}
+
+.forth--div {
+  background: #163300;
+  width: 40%;
+  height: 750px;
+  border-radius: 75px;
+  margin-left: 5%;
+  margin-right: 55%;
+  margin-top: 5%;
+  z-index: -2;
+}
+
+.forth--div h1 {
+  font-family: 'Oswald', sans-serif;
+  color: #9FE870;
+  font-size: 6rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.forth--div p {
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: left;
+}
+
+.fifth--main {
+  height: 100vh;
+  width: 100%;
+}
+
+.fifth--div {
+  background: #9FE870;
+  width: 100%;
+  height: 100%;
+  margin-left: 0%;
+  margin-right: 50%;
+  margin-top: -5%;
+  z-index: -2;
+  display: flex;
+}
+
+
+.fifth--div h1 {
+  font-family: 'Oswald', sans-serif;
+  color: #163300;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.fifth--div p {
+  color: #163300;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: left;
+}
+
+footer{
+  background: #163300;
+  padding: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+footer h1 {
+  font-family: 'Oswald', sans-serif;
+  color: #9FE870;
+  font-size: 4rem;
+  text-align: center;
+}
+
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+
+
