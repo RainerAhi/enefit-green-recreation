@@ -131,31 +131,18 @@ export default function Experience() {
   }, [])
 
 
-  //BUTTON GSAP ANIMATION
+  const button = document.getElementById("button");
 
-	// document.querySelectorAll('.button--test')?.forEach(item => {
-	// 	item.addEventListener('click', () => {
-	// 		window.scrollTo({ top: 2000, left: 0, behavior: 'smooth' })
-	// 	})
-	// })
+  function handleButtonClick() {
 
-  // const button = document.getElementById("button--test");
+    window.scrollTo({ top: 3100, behavior: 'smooth' })
 
-  // function handleButtonClick() {
+    console.log("clicked button")
 
-  //   tl.to(camera.position, {
-  //     x: 8,
-  //     y: 4,
-  //     z: 2,
-  //     duration: 1,
-  //     ease: "power2.out"
-  //   });
+  }
 
-  //   console.log("clicked button")
-
-  // }
-
-  // button.addEventListener("click", handleButtonClick);
+  button.addEventListener("click", handleButtonClick);
+  
 
   return (
     <>
